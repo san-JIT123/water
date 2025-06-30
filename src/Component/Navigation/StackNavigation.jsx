@@ -5,6 +5,17 @@ import LoadingScreen from './LoadingScreen';
 import LoginScreen from '../LoginPage/LoginScreen';
 import BottomNavigate from './BottomNavigate';
 import CartScreen from '../Screen/CartScreen';
+import AcountScreen from '../Screen/AcountScreen';
+import AcountFromScreen from '../Screen/AcountFromScreen';
+import OTPVerifyScreen from '../OTPVerifyFrom/OTPVerifyScreen';
+import Copyright from '../More/About/Copyright';
+import TermsOfService from '../More/About/TermsOfService';
+import LicensesAndRegistrations from '../More/About/LicensesAndRegistrations';
+import AboutScreen from '../More/About/AboutScreen';
+import SettingScreen from '../More/Setting/SettingScreen';
+import SeendFeddBack from '../More/SeendFeedBack/SeendFeddBack';
+import ReportSafetyScreen from '../More/ReportSafety/ReportSafetyScreen';
+import AccountSetting from '../More/Setting/AccountSetting';
 
 
 
@@ -32,10 +43,38 @@ export default function StackNavigation() {
         {
           isLoading ? <Stack.Screen name="Loading" component={LoadingScreen} options={{ headerShown: false }} />
             :
-          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         }
         <Stack.Screen name="HomePage" component={BottomNavigate} options={{ headerShown: false }} />
-        <Stack.Screen name="ProductDetail" component={CartScreen} />
+        <Stack.Screen name="ProductDetails" component={CartScreen} />
+        <Stack.Screen name="Acount" component={AcountScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Acount from" component={AcountFromScreen} />
+        <Stack.Screen name="OTPVerifyFrom" component={OTPVerifyScreen} options={{ headerShown: false }} />
+
+        {/* Abbout Page Start */}
+        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="Copy right" component={Copyright} />
+        <Stack.Screen name="Terms Of Service" component={TermsOfService} />
+        <Stack.Screen name="Licenses and Registrations" component={LicensesAndRegistrations} />
+        {/* Abbout Page Start */}
+
+        {/* Send FeedBack Page Start */}
+        <Stack.Screen name="Send FeedBack" component={SeendFeddBack} />
+        {/* Send FeedBack Start */}
+
+
+        {/*  Page Start */}
+        <Stack.Screen name="Report a Safety emergency" component={ReportSafetyScreen} />
+        {/* <Stack.Screen name="AccountSetting" component={AccountSetting} /> */}
+
+        {/* Setting Start */}
+
+        {/* Setting Page Start */}
+        <Stack.Screen name="Settings" component={SettingScreen} />
+        <Stack.Screen name="Account Setting" component={AccountSetting} />
+
+        {/* Setting Start */}
+
 
 
       </Stack.Navigator>

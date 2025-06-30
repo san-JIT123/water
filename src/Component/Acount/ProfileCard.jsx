@@ -1,10 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import YourProfile from './YoursProfilse';
+import { useNavigation } from '@react-navigation/native';
 
 export default function ProfileCard() {
+  const navigation = useNavigation()
+
   return (
-    <View style={styles.card}>
+     
+      <View style={styles.card}>
+        <Pressable onPress={()=>{navigation.navigate("Acount from")}}>
       <View style={styles.profileRow}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>S</Text>
@@ -15,7 +20,9 @@ export default function ProfileCard() {
         </View>
       </View>
       <YourProfile />
+       </Pressable>
     </View>
+   
   );
 }
 

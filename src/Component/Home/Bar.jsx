@@ -1,17 +1,21 @@
  import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AnimatedViewHome from './AnimatedViewHome';
+import { useNavigation } from '@react-navigation/native';
  
 
 export default function Bar() {
+const navigation=  useNavigation()
   return (
     <AnimatedViewHome delay={200}>
       <View style={styles.container}>
-        <Image
+        <Pressable onPress={()=>{navigation.navigate("Acount")}}>
+          <Image
           source={require('../../assets/images/image2.jpg')}
           style={styles.avatar}
         />
+        </Pressable>
         <View style={styles.textContainer}>
           <Text style={styles.welcome}>Welcome!</Text>
           <Text style={styles.subText}>Select Your Products</Text>

@@ -1,4 +1,3 @@
- 
  import React, { useEffect, useRef } from 'react';
 import { Animated, View, StyleSheet } from 'react-native';
 
@@ -7,9 +6,11 @@ export default function AnimatedViewHome({
   duration = 500,
   delay = 0,
   style,
-  animationType = 'fadeInUp'
+  animationType = 'fadeInUp',
+  isInteraction = true,  // ✅ default value added 
 }) {
   const animatedValue = useRef(new Animated.Value(0)).current;
+
   const translateY = animatedValue.interpolate({
     inputRange: [0, 1],
     outputRange: animationType === 'fadeInUp' ? [20, 0] : [0, 0],
@@ -21,6 +22,7 @@ export default function AnimatedViewHome({
       duration,
       delay,
       useNativeDriver: true,
+      isInteraction, // ✅ now defined safely
     }).start();
   }, []);
 

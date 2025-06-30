@@ -8,6 +8,7 @@ import EmailInput from './EmailInput';
 import DOBPicker from './DOBPicker';
 import GenderDropdown from './GenderDropdown';
 import UpdateButton from './UpdateButton';
+import AnimatedViewHome from '../Home/AnimatedViewHome';
 
 
 export default function AcountFrom() {
@@ -63,27 +64,29 @@ export default function AcountFrom() {
 
 
     return (
-        <View style={styles.container}>
-            <ProfileHeader />
-            {/* <ProfileImageSet /> */}
-            <NameInput onChange={handleChange} />
-            <MobileInput onChange={handleChange} />
-            <EmailInput onChange={handleChange} />
-            <DOBPicker date={date} setShowPicker={setShowPicker} showPicker={showPicker} onChange={onChange} />
-            <GenderDropdown
-                open={open}
-                value={value}
-                items={items}
-                setOpen={setOpen}
-                setValue={value => {
-                    setValue(value);
-                    handleChange('gender', value);
-                }}
-                setItems={setItems}
-                onChange={value => handleChange('gender', value)}
-            />
-            <UpdateButton disabled={!isField} onPress={handleUpdate} />
-        </View>
+        <AnimatedViewHome delay={100} style={{height: '100%',}}>
+            <View style={styles.container}>
+                <ProfileHeader />
+                {/* <ProfileImageSet /> */}
+                <NameInput onChange={handleChange} />
+                <MobileInput onChange={handleChange} />
+                <EmailInput onChange={handleChange} />
+                <DOBPicker date={date} setShowPicker={setShowPicker} showPicker={showPicker} onChange={onChange} />
+                <GenderDropdown
+                    open={open}
+                    value={value}
+                    items={items}
+                    setOpen={setOpen}
+                    setValue={value => {
+                        setValue(value);
+                        handleChange('gender', value);
+                    }}
+                    setItems={setItems}
+                    onChange={value => handleChange('gender', value)}
+                />
+                <UpdateButton disabled={!isField} onPress={handleUpdate} />
+            </View>
+        </AnimatedViewHome>
     );
 }
 

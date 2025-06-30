@@ -3,6 +3,8 @@
  import Acount from './src/Component/Acount/Acount'
  import bootsplash  from 'react-native-bootsplash'
 import StackNavigation from './src/Component/Navigation/StackNavigation'
+import OTPVerifyScreen from './src/Component/OTPVerifyFrom/OTPVerifyScreen'
+import AboutScreen from './src/Component/More/About/AboutScreen'
 
  export default function App() {
   useEffect(()=>{

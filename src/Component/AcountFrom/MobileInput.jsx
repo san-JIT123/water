@@ -1,8 +1,10 @@
 // components/MobileInput.js
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
 export default function MobileInput({ onChange }) {
+     const navigation=   useNavigation()
   return (
     <View style={styles.inputRow}>
       <TextInput
@@ -13,7 +15,7 @@ export default function MobileInput({ onChange }) {
         style={[styles.input, { flex: 1 }]}
         onChangeText={text => onChange('mobile', text)}
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate('OTPVerifyFrom')}}>
         <Text style={styles.changeBtn}>CHANGE</Text>
       </TouchableOpacity>
     </View>

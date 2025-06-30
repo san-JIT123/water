@@ -14,7 +14,7 @@ export default function HorizontalLogoGrid() {
 
  const itemsPress =(event)=>{
     if(event.id =='2'){
-      navigation.navigate('ProductDetail')
+      navigation.navigate('ProductDetails')
     }
  }
   
